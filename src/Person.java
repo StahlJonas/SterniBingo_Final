@@ -18,6 +18,7 @@ public class Person {
         BingoKarte karte = new BingoKarte();
         bingokarten.add(karte);
     }
+
     public void addBingokarte(BingoKarte bingokarte) {
         bingokarten.add(bingokarte);
     }
@@ -27,14 +28,22 @@ public class Person {
         bierdeckel.add(deckel);
         bierdeckelInt.add(wert);
     }
+
     public void addBierdeckel(int[] werte) {
-        for (int w : werte){
+        for (int w : werte) {
             Bierdeckel deckel = new Bierdeckel(w, this);
             bierdeckel.add(deckel);
             bierdeckelInt.add(w);
         }
     }
 
+    public int maxBingos() {
+        return maxBingos(new ArrayList<Bingo>()).size();
+    }
+
+    public List<Bingo> maxBingos(List<Bingo> bingos) {
+        return bingos;
+    }
 
     public void printKarten() {
         for (BingoKarte k : bingokarten) {
@@ -42,4 +51,10 @@ public class Person {
             System.out.println();
         }
     }
+    public List<Bingo> bingotest(){
+        return bingokarten.get(0).getBingos(bierdeckel);
+
+
+    }
+
 }
